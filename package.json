@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@tomphttp/bare-server-node": "^2.0.1",
+    "@types/node": "^18.0.6",
+    "easyviolet": "github:Russell2259/Easyviolet",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-http-proxy": "^2.0.0",
+    "http-proxy-middleware": "^2.0.6",
+    "node-fetch": "^3.2.6"
+  }
+}
