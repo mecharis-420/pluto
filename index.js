@@ -4,7 +4,7 @@ import createBareServer from "@tomphttp/bare-server-node";
 
 import ejs from 'ejs';
 
-const server = http.create(server);
+const server = http.createServer();
 const app  = express(server);
 const bareServer = createBareServer("/bare/")
 const games = require("./games.json")
