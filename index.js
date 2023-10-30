@@ -2,7 +2,7 @@ import express from "express";
 import http from "node:http";
 import createBareServer from "@tomphttp/bare-server-node";
 
-const ejs = require('ejs');
+import ejs from 'ejs';
 
 const server = http.create(server);
 const app  = express(server);
