@@ -7,7 +7,7 @@ import ejs from 'ejs';
 const server = http.createServer();
 const app = express(server);
 const bareServer = createBareServer("/bare/");
-import games from "./games.json" with { type: "json" };;
+import games from "./games.json" assert { type: "json" };;
 
 app.use(express.json());
 app.use(
