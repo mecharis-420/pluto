@@ -1,14 +1,20 @@
 import express from "express";
 import http from "node:http";
-import { createBareServer } from "@tomphttp/bare-server-node";
+import createBareServer from "@tomphttp/bare-server-node";
 
 import ejs from 'ejs';
 
 const server = http.createServer();
-const app  = express(server);
-const bareServer = createBareServer("/bare/")
+const app = express(server);
+const bareServer = createBareServer("/bare/");
 const games = require("./games.json")
 
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
@@ -51,4 +57,5 @@ server.on("listening", () => {
 });
 
 server.listen({
+  port: port,
 });
