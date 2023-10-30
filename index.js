@@ -1,13 +1,12 @@
 import express from "express";
-import http from "node:http";
+import http from "http";
 import { createBareServer } from '@tomphttp/bare-server-node';
-
 import ejs from 'ejs';
+import games from "./games.json";
 
-const server = http.createServer();
-const app = express(server);
+const app = express();
+const server = http.createServer(app);
 const bareServer = createBareServer("/bare/");
-import games from "./games.json" assert { type: "json" };;
 
 app.use(express.json());
 app.use(
@@ -47,7 +46,7 @@ server.on("request", (req, res) => {
 server.on("upgrade", (req, socket, head) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeUpgrade(req, socket, head);
-  }else{
+  } else {
     socket.end();
   }
 });
@@ -56,6 +55,4 @@ server.on("listening", () => {
   console.log(`Listening on port ${port}`);
 });
 
-server.listen({
-  port: port,
-});
+server.listen(port);
