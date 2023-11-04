@@ -31,6 +31,13 @@ app.get('/web', (req, res) => {
 app.get('/games', (req, res) => {
   res.render('games', { games });
 });
+app.get('/play/:game?', (req, res) => {
+  if(!req.params.game) {
+    res.redirect("/games")
+  } else {
+  res.render('player', { game: req.params.game });
+  }
+});
 app.get('/*', (req, res) => {
   res.render('404', { url: req.url });
 });
