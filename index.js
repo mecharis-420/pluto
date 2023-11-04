@@ -1,8 +1,8 @@
-import express from "express";
-import http from "http";
-import { createBareServer } from '@tomphttp/bare-server-node';
-import ejs from 'ejs';
-import games from "./games.json";
+const express = require("express")
+const http = require("http")
+const { createBareServer } = require("@tomphttp/bare-server-node")
+const ejs = require("ejs")
+const games = require("./games.json")
 
 const app = express();
 const server = http.createServer(app);
